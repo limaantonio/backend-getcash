@@ -2,21 +2,31 @@ const mongoose = require('mongoose');
 
 const SaleSchema = new mongoose.Schema({
   value: {
-    type: String,
+    type: Number,
     required: true,
   },
 
-  type: {
+  payment: {
     type: String,
     required: true
   },
 
   date: {
-    type: String,
+    type: Date,
     required: true
   },
 
   flag: {
+    type: String,
+    required: true
+  },
+
+  flagImgUrl: {
+    type: String,
+    required: true
+  },
+
+  status: {
     type: String,
     required: true
   },

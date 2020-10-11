@@ -8,5 +8,7 @@ const routes = express.Router();
 routes.post('/user', UserController.create);
 
 routes.post('/sale', SaleController.create);
+routes.get('/sales', SaleController.list);
+routes.get('/amount', SaleController.amount);
 
 module.exports = routes;
