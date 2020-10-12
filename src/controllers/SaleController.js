@@ -46,8 +46,6 @@ module.exports = {
     } catch (error) {
       return response.status(400).json({message : 'Error loading sales.'})
     }
-   
-    
   },
 
   async amount(req, res) {
@@ -71,5 +69,17 @@ module.exports = {
       }
     );
  
-  }
+  },
+
+  async index(request, response){
+    const {id} = request.params;
+
+    try {
+      const sale = await Sale.findById(id);
+
+      return response.status(200).json(sale);
+    } catch (error) {
+      return response.status(400).json({message : 'Error loading sale.'})
+    }
+  },
 }
