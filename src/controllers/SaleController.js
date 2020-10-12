@@ -56,7 +56,8 @@ module.exports = {
             _id: {month: {$month : "$date"}, year: {$year: "$date"}},
             total: {
               $sum: "$value"
-            }
+            },
+            count: {$sum: 1}
           }
         }
       ],
@@ -64,6 +65,8 @@ module.exports = {
         if (err) {
           res.send(err);
         } else {
+          
+          console.log(result[0]._id.month);
           res.json(result);
         }
       }
