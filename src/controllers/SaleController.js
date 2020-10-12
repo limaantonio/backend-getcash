@@ -4,7 +4,7 @@ const Sale = require('../models/Sale');
 module.exports = {
   async create (request, response){
     try {
-      const {value, payment, date, flag, status} = request.body;
+      const {value, payment, date, month, flag, status} = request.body;
 
       let flagImgUrl = '';
 
@@ -27,6 +27,7 @@ module.exports = {
           payment: payment,
           date: date,
           flag: flag,
+          month: month,
           flagImgUrl: flagImgUrl,
           status: status
         });
@@ -39,13 +40,19 @@ module.exports = {
   },
 
   async list (request, response){
-    try {
-      const sales = await Sale.find();
+    let sales;
+    
+  
 
-      return response.status(200).json(sales);
-    } catch (error) {
-      return response.status(400).json({message : 'Error loading sales.'})
+    if(request.query.month){
+     sales = await Sale.find({
+       
+       month: request.query.month
+     });
+    }else{
+      sales = await Sale.find();
     }
+    return response.status(200).json(sales);
   },
 
   async amount(req, res) {
@@ -57,7 +64,8 @@ module.exports = {
             total: {
               $sum: "$value"
             },
-            count: {$sum: 1}
+            count: {$sum: 1},
+            
           }
         }
       ],

@@ -12,4 +12,5 @@ routes.get('/sales', SaleController.list);
 routes.get('/amount', SaleController.amount);
 routes.get('/sale/:id', SaleController.index);
 
+
 module.exports = routes;

@@ -31,6 +31,11 @@ const SaleSchema = new mongoose.Schema({
     required: true
   },
 
+  month: {
+    type: String,
+    required: true
+  },
+
   cretedAt: {
     type: Date,
     default: Date.now()
