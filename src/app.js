@@ -6,6 +6,12 @@ const routes = require('./routes');
 
 const app = express();
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
+
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
 mongoose.connect(
   process.env.MONGO_URL,{
   useNewUrlParser: true,

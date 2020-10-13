@@ -1,0 +1,144 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GetCred API",
+    "description": "This is a API from GetCred API.é uma solução integrada ao aplicativo SuperGet da Getnet que possibilitará ao usuário que precisa recorrer aos empréstimos para financiar seu negócio ou um projeto referente a sua atividade profissional, mas que não tem como dar garantias como imóveis, automóveis ou outras formas mais tradicionais."
+  },
+  "host": "localhost:3333",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {},
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/sale": {
+      "post": {
+        "tags": [
+          "Sale"
+        ],
+        "description": "Endpoint to add a sale.",
+        "parameters": [
+          {
+            "name": "newSale",
+            "in": "body",
+            "description": "Informações das vendas.",
+            "required": true,
+            "type": "object"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Sale successfully registered!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sales": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "description": "Endpoint for a list of registered sales",
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "description": "Find by Month",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/amount": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "description": "Endpoint for a list of Amount sales",
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "description": "List by Amount and month",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/sale/{id}": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Sale ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Endpoint to add a User.",
+        "parameters": [
+          {
+            "name": "newUser",
+            "in": "body",
+            "description": "Informações sobre o usuário.",
+            "required": true,
+            "type": "object"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User successfully registered!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
