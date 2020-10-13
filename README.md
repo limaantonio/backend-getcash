@@ -1,5 +1,5 @@
 <h1 align="center">
- <img src="./files/logo.svg"/>
+ <img src="./files/logo.png"/>
   <br>
   GetCred API 
 </h1>
@@ -64,4 +64,8 @@ O **GetCred API**, é uma solução integrada ao aplicativo SuperGet da Getnet q
 ```
 
 
-Desenvolvido por Antonio Carlos
+- [Sandra Arruda](https://app.shawee.io/@sandraarruda)
+- [Renata Santos](https://app.shawee.io/@renatasantsil123)
+- [Antonio Carlos](https://app.shawee.io/@antoniocarlos20)
+- [Paulo Victor](https://app.shawee.io/@paulllovms)
+- [Rodrigo de Araújo](https://app.shawee.io/@rodrigoatemoteo)
